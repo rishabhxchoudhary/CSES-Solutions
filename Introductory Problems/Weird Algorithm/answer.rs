@@ -5,7 +5,7 @@ fn main() {
     let mut line = String::new();
     input.read_line(&mut line).unwrap();
     let mut split = line.trim().split_whitespace();
-    let mut n: i32 = split.next().unwrap().parse().unwrap();
+    let mut n: i64 = split.next().unwrap().parse().unwrap();
 
     while n != 1 {
         print!("{} ", n);

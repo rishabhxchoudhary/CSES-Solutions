@@ -1,0 +1,6 @@
+# Ignore all files without an extension
+*.
+!*/  # But do not ignore directories
+
+# Ignore all .exe files
+*.exe
