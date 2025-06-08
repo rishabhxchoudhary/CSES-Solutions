@@ -1,21 +1,11 @@
-const readline = require('readline');
+const fs = require('fs');
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-    terminal: false
-});
+const input = fs.readFileSync(0, 'utf-8').trim().split('\n');
 
-let inputLines = [];
+const n = parseInt(input[0]);
+const nums = input[1].split(' ').map(Number);
 
-rl.on('line', function (line) {
-    inputLines.push(line.trim());
-    if (inputLines.length === 2) {
-        const n = parseInt(inputLines[0]);
-        const numbers = inputLines[1].split(' ').map(Number);
-        const actualSum = numbers.reduce((acc, val) => acc + val, 0);
-        const expectedSum = n * (n + 1) / 2;
-        console.log(expectedSum - actualSum);
-        rl.close();
-    }
-});
+const expectedSum = n * (n + 1) / 2;
+const actualSum = nums.reduce((a, b) => a + b, 0);
+
+console.log(expectedSum - actualSum);
